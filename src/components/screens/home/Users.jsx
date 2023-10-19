@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import style from './Users.module.css'
+import style from './Users.module.scss'
 
 const Users = () => {
     const [data, setData] = useState([]);
@@ -26,7 +26,9 @@ const Users = () => {
                     <p>Email: {user.email}</p>
                     <p>Address: <br></br>
                         street: {user.address.street}<br></br>
-                        suite: {user.address.suite}</p>
+                        suite: {user.address.suite}
+                        <p>test</p>
+                    </p>
                 </div>
             ))}
         </div>
