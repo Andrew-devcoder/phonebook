@@ -9,7 +9,7 @@ const Home = () => {
 	return (
 		<>
 			<Title tag="h1" title="Phone Book" />
-			<Title tag="h2" title="asd" className={styles.colorRed} />
+			<Title tag="h2" title="title h2 red color" className={styles.colorRed} />
 			<Users>
 				<UserInfo />
 				{/* <ButtonMore /> */}
