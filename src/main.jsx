@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './components/screens/home/Home'
 import './assets/sass/App.scss'
+import Home from './components/screens/home/home'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <Home />
-)
+// ?? чому треба писати з маленької H якщо назва з великої
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Home />)
