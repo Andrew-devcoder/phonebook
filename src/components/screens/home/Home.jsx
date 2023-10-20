@@ -4,6 +4,9 @@ import styles from './title/Title.module.scss'
 import Users from './users/Users'
 import UserInfo from './users/user-info/UserInfo'
 
+
+
+
 const Home = () => {
 
 	return (
@@ -12,7 +15,6 @@ const Home = () => {
 			<Title tag="h2" title="title h2 red color" className={styles.colorRed} />
 			<Users>
 				<UserInfo />
-				{/* <ButtonMore /> */}
 			</Users>
 		</>
 	)
