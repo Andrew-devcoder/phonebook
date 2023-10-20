@@ -1,17 +1,15 @@
-import Users from './Users'
-
+import React from 'react'
+import Title from './title/Title'
+import Users from './users/Users'
 
 const Home = () => {
+
 	return (
 		<>
-			<div>
-				<h1>Phone Book</h1>
-			</div>
-			<div>
-				<Users />
-			</div>
+			<Title />
+			<Users />
 		</>
-	);
+	)
 }
 
 export default Home;
