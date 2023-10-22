@@ -13,10 +13,18 @@ const Home = () => {
 		<>
 			<Title tag="h1" title="Phone Book" />
 			<Title tag="h2" title="title h2 red color" className={styles.colorRed} />
-			{/* <Users> */}
-			<UserInfo />
-			{/* </Users> */}
+			<Users>
+				<UserInfo />
+			</Users>
+
+			<div
+				onAnimationStart={e => console.log('onAnimationStart')}
+				onAnimationIteration={e => console.log('onAnimationIteration')}
+				onAnimationEnd={e => console.log('onAnimationEnd')}
+			/>
 		</>
+
+
 	)
 }
 

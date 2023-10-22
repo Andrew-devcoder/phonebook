@@ -1,7 +1,10 @@
+import { motion } from "framer-motion"
+
 const Button = (props) => {
 	return (
 		<>
-			<button className={props.className} onClick={props.onClick}>{props.text}</button >
+			{/* <motion.button whileHover={{ scale: 1.1 }} className="save-button" onClick={() => { null }}>{props.text}</motion.button > */}
+			<motion.button whileHover={{ scale: 1.1 }} className='"save-button" {props.className}' onClick={props.onClick}>{props.text}</motion.button >
 		</>
 	)
 }
