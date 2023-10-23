@@ -1,6 +1,7 @@
 import React from 'react'
 import Title from './title/Title'
 import styles from './title/Title.module.scss'
+import SearchBar from './search-bar/SearchBar'
 import Users from './users/Users'
 import UserInfo from './users/user-info/UserInfo'
 
@@ -13,15 +14,10 @@ const Home = () => {
 		<>
 			<Title tag="h1" title="Phone Book" />
 			<Title tag="h2" title="title h2 red color" className={styles.colorRed} />
+			<SearchBar />
 			<Users>
 				<UserInfo />
 			</Users>
-
-			<div
-				onAnimationStart={e => console.log('onAnimationStart')}
-				onAnimationIteration={e => console.log('onAnimationIteration')}
-				onAnimationEnd={e => console.log('onAnimationEnd')}
-			/>
 		</>
 
 

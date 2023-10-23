@@ -5,6 +5,7 @@ import Button from '../../button/button'
 const UserInfo = () => {
 	const [data, setData] = useState([]);
 	const [cardState, setCardState] = useState({});
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		fetch("https://jsonplaceholder.typicode.com/users")
@@ -16,6 +17,7 @@ const UserInfo = () => {
 			})
 			.then(data => {
 				setData(data);
+				setIsLoading(false);
 			})
 			.catch(error => {
 				console.error(error);
@@ -31,34 +33,39 @@ const UserInfo = () => {
 
 	return (
 		<>
-			{data.map((user) => (
-				<div key={user.id} className={style.user}>
-					<p>Name: {user.name}</p>
-					<p>User-name: {user.username}</p>
-					<p>Email: {user.email}</p>
-					{cardState[user.id] && (
-						<>
-							<p>Address: <br></br>
-								street: {user.address.street}<br></br>
-								suite: {user.address.suite}<br></br>
-								city: {user.address.city}<br></br>
-								zipcode: {user.address.zipcode}<br></br>
-								geo-lat: {user.address.geo.lat}<br></br>
-								geo-lng: {user.address.geo.lng}<br></br>
-							</p>
-							<p>phone: {user.phone}</p>
-							<p>website: {user.website}</p>
-							<p>company: <br></br>
-								name: {user.company.name}<br></br>
-								catchPhrase: {user.company.catchPhrase}<br></br>
-								bs: {user.company.bs}<br></br>
-							</p>
-						</>
-					)}
-					<Button className={style.button} text={cardState[user.id] ? "hide" : "view more"} onClick={() => toggleCardDetails(user.id)} />
-				</div>
-			))}
+			{isLoading ? (
+				<div className="loading-animation">Loading...</div>
+			) : (
+				data.map((user) => (
+					<div key={user.id} className={style.user}>
+						<p>Name: {user.name}</p>
+						<p>User-name: {user.username}</p>
+						<p>Email: {user.email}</p>
+						{cardState[user.id] && (
+							<>
+								<p>Address: <br></br>
+									street: {user.address.street}<br></br>
+									suite: {user.address.suite}<br></br>
+									city: {user.address.city}<br></br>
+									zipcode: {user.address.zipcode}<br></br>
+									geo-lat: {user.address.geo.lat}<br></br>
+									geo-lng: {user.address.geo.lng}<br></br>
+								</p>
+								<p>phone: {user.phone}</p>
+								<p>website: {user.website}</p>
+								<p>company: <br></br>
+									name: {user.company.name}<br></br>
+									catchPhrase: {user.company.catchPhrase}<br></br>
+									bs: {user.company.bs}<br></br>
+								</p>
+							</>
+						)}
+						<Button className={style.button} text={cardState[user.id] ? "hide" : "view more"} onClick={() => toggleCardDetails(user.id)} />
+					</div>
+				))
+			)}
 		</>
+
 	);
 };
 

@@ -1,0 +1,28 @@
+.wrapper {
+    margin: 10px auto;
+    padding: 0.5em 0 0.5em 1.5em;
+
+    display: flex;
+    align-items: center;
+
+    max-width: max-content;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    box-shadow: 2px 2px 8px #030303;
+
+    & svg {
+        fill: #ddd;
+        font-size: 1.2em;
+    }
+}
+
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 0 1em;
+    color: white;
+    height: 100%;
+    font-size: 1.2rem;
+}
