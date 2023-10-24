@@ -3,16 +3,18 @@ import { BiSearch } from "react-icons/bi";
 
 import style from './SearchBar.module.scss'
 
-const SearchBar = () => {
-	const [input, setInput] = useState('')
+const SearchBar = (props) => {
+
+	console.log(props)
 
 	return (
 		< div className={style.wrapper} >
 			<BiSearch />
 			<input
 				placeholder='Type to search...'
-				value={input}
-				onChange={(e) => { setInput(e.target.value) }} />
+				type="text"
+				onChange={(e) => props.onChange(e.target.value)}
+			/>
 		</ div>
 	)
 }
