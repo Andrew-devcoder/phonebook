@@ -5,9 +5,6 @@ import SearchBar from './search-bar/SearchBar'
 import Users from './users/Users'
 import UserInfo from './users/user-info/UserInfo'
 
-
-
-
 const Home = () => {
 	const [input, setInput] = useState("");
 
