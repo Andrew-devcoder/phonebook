@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "../user-card/UserCard";
+import UserService from '../../../../../services/user.service.js'
 
 const UserInfo = (props) => {
 	const [data, setData] = useState([]);
@@ -12,21 +13,39 @@ const UserInfo = (props) => {
 		}));
 	};
 
+
+	// за допомогою fetch отримуємо з сервера масив з данними 
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+
+	// 		fetch("https://jsonplaceholder.typicode.com/users")
+	// 			.then(response => {
+	// 				if (!response.ok) {
+	// 					throw new Error("Network response was not ok");
+	// 				}
+	// 				return response.json();
+	// 			})
+	// 			.then(data => {
+	// 				setData(data);
+	// 				setIsLoading(false);
+	// 			})
+	// 			.catch(error => {
+	// 				console.error(error);
+	// 			});
+	// 	}
+
+	// 	fetchData()
+
+	// }, []);
+
+	// інший спосіб отримання данних за допомогою axios
 	useEffect(() => {
-		fetch("https://jsonplaceholder.typicode.com/users")
-			.then(response => {
-				if (!response.ok) {
-					throw new Error("Network response was not ok");
-				}
-				return response.json();
-			})
-			.then(data => {
-				setData(data);
-				setIsLoading(false);
-			})
-			.catch(error => {
-				console.error(error);
-			});
+		const fetchData = async () => {
+			const data = await UserService.getAll()
+			setData(data);
+			setIsLoading(false);
+		}
+		fetchData()
 	}, []);
 
 	return (
