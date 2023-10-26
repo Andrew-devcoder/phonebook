@@ -13,7 +13,7 @@ const SearchBar = (props) => {
 			<input
 				placeholder='Type to search...'
 				type="text"
-				onChange={(e) => props.onChange(e.target.value)}
+				onChange={(e) => props.onChange(e.target.value.toLowerCase())}
 			/>
 		</ div>
 	)
