@@ -12,7 +12,7 @@ const UserCard = ({ user, cardState, toggleCardDetails }) => {
 			<p>Name: {user.name}</p>
 			<p>User-name: {user.username}</p>
 			<p>Email: {user.email}</p>
-			{cardState[user.id] && (
+			{/* {cardState[user.id] && (
 				<>
 					<p>Address: <br></br>
 						street: {user.address.street}<br></br>
@@ -30,9 +30,9 @@ const UserCard = ({ user, cardState, toggleCardDetails }) => {
 						bs: {user.company.bs}<br></br>
 					</p>
 				</>
-			)}
+			)} */}
 
-			<Button className={style.button} text={cardState[user.id] ? "hide" : "view more"} onClick={() => toggleCardDetails(user.id)} />
+			{/* <Button className={style.button} text={cardState[user.id] ? "hide" : "view more"} onClick={() => toggleCardDetails(user.id)} /> */}
 		</div>
 	);
 };

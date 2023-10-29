@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom"
 import Home from '../screens/home/home'
 import UserDetail from "../screens/home/users/user-detail/UserDetail"
+import NotFound from '../screens/404/NotFound'
 
 const Router = createBrowserRouter([
 	{
 		path: "/",
-		element: < Home />,
+		element: <Home />,
 	},
 	{
 		path: "/user/:id",
@@ -13,7 +14,7 @@ const Router = createBrowserRouter([
 	},
 	{
 		path: "*",
-		element: <div>Page not found...</div>,
+		element: <NotFound />,
 	}
 ])
 

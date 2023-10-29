@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import UserService from '../../../../../services/user.service.js'
+import UserCard from '../user-card/UserCard.jsx'
 
 const UserDetail = () => {
 
@@ -22,8 +23,8 @@ const UserDetail = () => {
 
 	return (
 		<>
-			<h1>User card</h1>
-			<div user={JSON.stringify(user)}></div>
+			<h1>User card {user.id}</h1>
+			<UserCard user={user} />
 
 		</>
 	)
