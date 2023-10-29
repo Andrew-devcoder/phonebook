@@ -15,7 +15,7 @@ const Home = () => {
 
 			<SearchBar onChange={value => setInput(value)} />
 
-			<Users >
+			<Users>
 				<UserInfo input={input} />
 			</Users>
 		</>
