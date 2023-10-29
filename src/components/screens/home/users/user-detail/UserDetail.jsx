@@ -25,7 +25,6 @@ const UserDetail = () => {
 		<>
 			<h1>User card {user.id}</h1>
 			<UserCard user={user} />
-
 		</>
 	)
 }
