@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserCard from "../user-card/UserCard";
 import UserService from '../../../../../services/user.service.js'
 
-const UserInfo = (props) => {
+const UsersList = (props) => {
 	const [data, setData] = useState([]);
 	const [cardState, setCardState] = useState({});
 	const [isLoading, setIsLoading] = useState(true);
@@ -56,7 +56,9 @@ const UserInfo = (props) => {
 				data.filter((user) => {
 					return props.input === '' ? true : user.name.toLowerCase().includes(props.input)
 				}).map((user) => (
-					<UserCard key={user.id} user={user} cardState={cardState} toggleCardDetails={toggleCardDetails} />
+					<div key={user.id}>
+						<UserCard user={user} cardState={cardState} toggleCardDetails={toggleCardDetails} />
+					</div>
 				))
 			)}
 		</>
@@ -64,4 +66,4 @@ const UserInfo = (props) => {
 	);
 };
 
-export default UserInfo;
+export default UsersList;

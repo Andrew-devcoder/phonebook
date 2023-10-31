@@ -23,7 +23,7 @@ const UserDetail = () => {
 
 	return (
 		<>
-			<h1>User card {user.id}</h1>
+			<h1>Full info {user.name}</h1>
 			<UserCard user={user} />
 		</>
 	)

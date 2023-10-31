@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Title from './title/Title'
 import styles from './title/Title.module.scss'
 import SearchBar from './search-bar/SearchBar'
-import Users from './users/Users'
-import UserInfo from './users/user-info/UserInfo'
+import ContainerUsersList from './users/ContainerUsersList'
+import UsersList from './users/users-list/UsersList'
 
 const Home = () => {
 	const [input, setInput] = useState("");
@@ -15,9 +15,9 @@ const Home = () => {
 
 			<SearchBar onChange={value => setInput(value)} />
 
-			<Users>
-				<UserInfo input={input} />
-			</Users>
+			<ContainerUsersList>
+				<UsersList input={input} />
+			</ContainerUsersList>
 		</>
 
 

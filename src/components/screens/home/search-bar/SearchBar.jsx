@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { BiSearch } from "react-icons/bi";
 
 import style from './SearchBar.module.scss'
 
 const SearchBar = (props) => {
-
-	console.log(props)
 
 	return (
 		< div className={style.wrapper} >
