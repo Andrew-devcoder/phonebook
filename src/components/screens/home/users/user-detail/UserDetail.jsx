@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom"
 import UserService from '../../../../../services/user.service.js'
 import UserCard from '../user-card/UserCard.jsx'
 
+import Title from '../../title/Title.jsx'
+
 const UserDetail = () => {
 
 	const { id } = useParams()
@@ -23,7 +25,7 @@ const UserDetail = () => {
 
 	return (
 		<>
-			<h1>Full info {user.name}</h1>
+			<Title tag="h1" title={`Full info ${user.name}`} />
 			<UserCard user={user} />
 		</>
 	)
